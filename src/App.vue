@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <el-button type="success" plain>成功按钮</el-button>
-  </div>
+    <!-- 一级路由对应组件渲染的位置 -->
+    <router-view></router-view>
+
+
+  </div> 
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+// import Login from './views/login/index.vue'
 
 export default {
   name: 'app',
   components: {
+    // Login
   }
 }
 </script>

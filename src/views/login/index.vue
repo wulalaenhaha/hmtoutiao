@@ -36,8 +36,8 @@ export default {
     return {
       // 表单数据对象
       loginForm: {
-        mobile: "",
-        code: ""
+        mobile: '13911111111',
+        code: '246810'
       },
       // 表单验证规则对象
       loginRules: {
@@ -66,6 +66,15 @@ export default {
             // 1.跳转到首页
             // TODO（待完成）2.保存用户的信息，用来判断登陆的状态
             // console.log(res.data);
+            // sessionStorage 是一个BOM 对象，也是一全局对象，作用：保存数据
+            // 是由保质期的，当股权牛逼浏览器的时候就失效提供了4个接口
+            // sessionStorage.setItem(key,value)  存储value字符串数据
+            // sessionStorage.getItem(key)    获取数据
+            // sessionStorage.removeItem(key)  删除数据
+            // sessionStorage.clear()           清空数据
+            // res.data是响应主体{message：“ok”，data：{...}}  
+            // res.data.data是响应主体里边的data:{.....}
+            window.sessionStorage.setItem('hmtoutiao',JSON.stringify(res.data.data))
             this.$router.push('/')
             
           })

@@ -11,44 +11,46 @@
             default-active   默认激活的菜单样式，通过指定的菜单项的index的值
             active-text-color  激活时的字体颜色
             collapse   导航菜单的折叠  false ：展开   true：收起
+            router模式会在激活导航时以 index 作为 path 进行路由跳转
            -->
           <el-menu
             style="border-right:none"
-            default-active="1"
+            default-active="/"
             class="el-menu-vertical-demo"
             background-color="#002033"
             text-color="#fff"
             active-text-color="#ffd04b"
             :collapse="collapse"
             :collapse-transition="false"
+            router
           >
           <!-- el-submenu  有下一级菜单的容器 -->
           <!-- el-menu-item   没有下一级菜单的额容器 -->
-            <el-menu-item index="1">
+            <el-menu-item index="/">
                 <i class="el-icon-s-home"></i>
                 <span slot="title">首页</span>
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="/article">
               <i class="el-icon-document"></i>
               <span slot="title">内容管理</span>
             </el-menu-item>
-            <el-menu-item index="3">
+            <el-menu-item index="/image">
               <i class="el-icon-picture"></i>
               <span slot="title">素材管理</span>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="/publish">
               <i class="el-icon-s-promotion"></i>
               <span slot="title">发布文章</span>
             </el-menu-item>
-            <el-menu-item index="5">
+            <el-menu-item index="comment">
               <i class="el-icon-chat-dot-round"></i>
               <span slot="title">评论管理</span>
             </el-menu-item>
-            <el-menu-item index="6">
+            <el-menu-item index="/fans">
               <i class="el-icon-present"></i>
               <span slot="title">粉丝管理</span>
             </el-menu-item>
-            <el-menu-item index="7">
+            <el-menu-item index="/setting">
               <i class="el-icon-setting"></i>
               <span slot="title">个人设置</span>
             </el-menu-item>
@@ -76,8 +78,8 @@
       </el-header>
       
       <el-main>
-        <div class="welcome"></div>
-        <!-- <div class="not_found"></div> -->
+        <!-- 二级路由显示的位置 -->
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -132,17 +134,6 @@
       padding-left: 10px;
     }
   }
-
-  .welcome {
-    width: 100%;
-    height: 100%;
-    background: url(../../assets/images/welcome.jpg) no-repeat center ;
-  }
-  // .not_found{
-  //   width: 100%;
-  //   height: 100%;
-  //   background: url(../../assets/images/404.png) no-repeat center;
-  // }
 }
 </style>
 

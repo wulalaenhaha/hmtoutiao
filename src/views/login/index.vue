@@ -60,7 +60,7 @@ export default {
           // 提交登录请求  axios 是基于promise封装的  post() fa返回值是一个promise对象
           // alert('成功')
           this.$http
-          .post("http://ttapi.research.itcast.cn/mp/v1_0/authorizations", this.loginForm)
+          .post('authorizations', this.loginForm)
           .then((res) => {
             //   res是相应对象   包含后台返回的数据
             // 1.跳转到首页
